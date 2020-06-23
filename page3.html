@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link  rel="stylesheet" type="text/Css" href="./css/style.css" />
+
+
+<style>
+    body{
+        background-color: rgb(233, 233, 233);
+    }
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+</style>
+</head>
+<body onload="myFunction()" style="margin:0;">
+
+<div id="loader"></div>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <h2 class="font"> مرحبا بكم في بوابة الكويت التعليمية</h2>
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="download-2.jpg" style="width:100%">
+      <div class="text"></div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="download.jpg" style="width:100%">
+      <div class="text"></div>
+    </div>
+    
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="newschool2020.jpg" style="width:100%">
+      <div class="text"></div>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)"> &#10095;</a>
+    
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+
+    
+    </script>
+<p>بدأت حركة التعليم في الكويت مع تأسيس المدرسة المباركية ثم
+    بنات قبل هذه المدرسة ضمن المدرسة القبلية منذ عام 1956 </p>
+    <p>لم تتوقف التربية على مدى رحلتها في نشر التعليم بالكويت عن السعي الدائب لتجويد نوعيته وإحكام الصلة بين محتواه واتجاهه وبين متطلبات التنمية يفي مجتمعه وحركة العالم من حوله .
+        ونداء اليوم في التربية هو إقامة المجتمع الدائم المتعلم 
+        الذي تصبح المدرسة فيه إحدى مؤسسات التربية المستمرة،
+         تؤازرها وتكمل جهودها سائر المؤسسات الاجتماعية والثقافية والإعلامية والاقتصادية من خلال برامج التعليم المستمر وفرصة واستثمار كل إمكانات البيئة في هذا المجال لتتاح لكل فرد على مدى رحلة حياته فرص تعليمية وتدريبية تمكنه من تنمية قدراته ومهاراته ليواكب ويلبي الحاجات المتجددة التي يفرضها تطور مجتمعه ومطالب تنميته</p>
+<!-- <p>Some text in my newly loaded page..</p> -->
+</div>
+
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+<div id="mySidenav" class="sidenav">
+    <a href="index.html" id="about">الصفحة الرئسية</a>
+    <a href="page6.html" id="blog">البرامج</a>
+    <a href="page2.html" id="projects">باب التسجيل</a>
+    <a href="page4.html" id="contact">تسجيل دخول</a>
+  </div>
+  
+</body>
+</html>
